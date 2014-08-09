@@ -7,6 +7,7 @@ Class Login extends MX_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('m_login');
+         
     }
 
     
@@ -22,6 +23,8 @@ Class Login extends MX_Controller {
         if ($this->input->post('submit')) {
             $userid = $this->input->post('userid');
             $passid = $this->input->post('passid');
+            
+           
 
             $user = $this->m_login->checkLogin($userid, $passid);
             if (!empty($user)) {
@@ -29,6 +32,7 @@ Class Login extends MX_Controller {
                 $sessionData['userid'] = $user->userid;
                 $sessionData['level_user'] = $user->level_user;
                 $sessionData['is_login'] = TRUE;
+                
 
                 $this->session->set_userdata($sessionData);
                

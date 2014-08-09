@@ -13,7 +13,7 @@ Class Mahasiswa extends MX_Controller {
         parent::__construct();
         $this->load->model('m_mhs');
         $this->load->model('prodi/m_prodi');
-         $this->load->model('kelas/m_kelas');
+        $this->load->model('kelas/m_kelas');
     }
 
     public function index() {
@@ -143,16 +143,16 @@ Class Mahasiswa extends MX_Controller {
 
     public function edit_pass($id = NULL) {
         if ($this->input->post('submit')) {
-            $data = $this->m_staff->array_from_post(array('userid', 'paswd_lama', 'passid'));
-            $cek = $this->m_staff->cek_paswd($data['userid'], $data['paswd_lama']);
+            $data = $this->m_mhs->array_from_post(array('userid', 'paswd_lama', 'passid'));
+            $cek = $this->m_mhs->cek_paswd($data['userid'], $data['paswd_lama']);
             if ($cek) {
-                $this->m_staff->save(array('passid' => $data['passid']), $data['userid']);
-                redirect('staff/detail/' . $data['userid']);
+                $this->m_mhs->save(array('passid' => $data['passid']), $data['userid']);
+                redirect('mahasiswa/mobile/' . $data['userid']);
             }
         }
-        $data['staff'] = $this->m_staff->get_pass($id);
-        $data['content'] = 'staff/edit_pass';
-        $this->load->view('layout/template', $data);
+        $data['mhs'] = $this->m_mhs->get_pass($id);
+       
+        $this->load->view('mahasiswa/edit_pass', $data);
     }
 
     public function detail($id) {

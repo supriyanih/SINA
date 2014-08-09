@@ -36,8 +36,13 @@
                     <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-bullets"><?php echo $mhs->nim; ?></button>
                      <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-phone"><?php echo $mhs->telpon; ?></button>
                      <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-mail"><?php echo $mhs->email; ?></button>
-                     <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-lock">Edit Password</button>
+                     
+                     
+                             
+                            
                     </li> 
+                    <a href="<?php echo base_url('mahasiswa/edit_pass' .'/'. $this->session->userdata('userid'));?>" 
+                       data-role="button" data-mini="true">Ganti Password</a>
           </ul>
      
   </div>

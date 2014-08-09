@@ -16,7 +16,13 @@ Class Super extends MX_Controller {
     }
 
     public function index() {
-        superAdminLogin();
+        if(isLogin()==false ) {
+            redirect('login');
+        }elseif ( $this->session->userdata('level_user') == 2) {
+            redirect('login');
+        }elseif ( $this->session->userdata('level_user') == 1) {
+            redirect('login');
+        }
         $data['staff'] = $this->m_super->super();
         foreach ($data['staff'] as $k => $v) {
             
@@ -32,8 +38,10 @@ Class Super extends MX_Controller {
         $this->load->view('layout/template', $data);
     }
     public function register() {
-       
-        superAdminLogin();
+       if(isLogin()==false){
+            redirect('login');
+        }
+     
         $this->load->model('jabatan/m_jabatan');
         if ($this->input->post('submit')) {
             $data = $this->m_super->array_from_post(array
@@ -81,7 +89,9 @@ Class Super extends MX_Controller {
         $this->load->view('layout/template', $data);
     }
     public function edit($id = null) {
-        superAdminLogin();
+        if(isLogin()==false){
+            redirect('login');
+        }
         if ($this->input->post('submit')) {
             $rules = $this->m_super->rules;
             $this->form_validation->set_rules($rules);
@@ -125,7 +135,9 @@ Class Super extends MX_Controller {
     }
 
     public function edit_pass($id = NULL) {
-        superAdminLogin();
+       if(isLogin()==false){
+            redirect('login');
+        }
         if ($this->input->post('submit')) {
             $data = $this->m_super->array_from_post(array('userid', 'paswd_lama', 'passid'));
             $cek = $this->m_super->cek_paswd($data['userid'], $data['paswd_lama']);
@@ -140,7 +152,9 @@ Class Super extends MX_Controller {
     }
 
     public function detail($id) {
-        superAdminLogin();
+       if(isLogin()==false){
+            redirect('login');
+        }
         $data['pegawai'] = $this->m_super->get($id);
         $data['jadwal'] = $this->m_super->jadwal($id);
         foreach ($data['jadwal'] as $k => $v) {
@@ -177,7 +191,9 @@ Class Super extends MX_Controller {
     }
 
     public function delete($id) {
-        superAdminLogin();
+        if(isLogin()==false){
+            redirect('login');
+        }
         if ($this->m_super->delete($id)) {
             redirect('super');
         } else {

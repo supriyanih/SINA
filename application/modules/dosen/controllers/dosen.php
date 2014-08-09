@@ -180,6 +180,9 @@ Class Dosen extends MX_Controller {
                 $data['jadwal'][$k]->kd_smstr = $sms->kd_smstr;
             }
         }
+       
+        
+        
         $data['content'] = 'dosen/detail';
         $this->load->view('layout/template', $data);
     }

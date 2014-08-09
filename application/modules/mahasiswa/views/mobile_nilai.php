@@ -13,13 +13,18 @@
             <h4>Nilai</h4>
         </div>     
     <div data-role="main" class="ui-content">
+        
+        
        <ul data-role="listview" data-filter="true" data-filter-reveal="true" data-filter-placeholder="cari matakuliah" data-inset="true">   
         <?php
             $i = 1;
             foreach ($nilai as $nil) :
                 ?>
                     
-           <li><b><?php echo $nil->kd_smstr; ?></b><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $nil->nm_matkul; ?><span class="ui-li-count"><?php  echo $nil->grade; ?></span></small></li>
+           <li data-mini="true"><small>smtr&nbsp;&nbsp;&nbsp;<?php echo $nil->kd_smstr; ?></small><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <?php echo $nil->nm_matkul; ?>
+                   <span class="ui-li-count"><?php  echo $nil->grade; ?></span></small>
+           </li>
                        
                     
         

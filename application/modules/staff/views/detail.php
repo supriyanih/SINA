@@ -21,33 +21,6 @@
             </div>
 
         </div>
-                    <div class="col-sm-2 col-md-6">
-                <legend><i class="glyphicon glyphicon-globe"></i>Pendidikan</legend>
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Tahun</th>
-                            <th>Detail Pendidikan</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($pendidikan as $pdk): ?>
-                            <tr>
-                                <td><?php echo $pdk->t_pdk; ?></td>
-                                <td>
-                                    <p><?php echo $pdk->d_pdk; ?></p>
-                                    <p>
-                                        <?php echo btn_edit('pegawai/edit_pdk/' . $pdk->idp); ?>
-                                        <?php echo btn_delete('pegawai/del_pdk/' . $pdk->idp . '/' . $pdk->pdk_nip); ?>
-                                    </p>
-                                </td>
-                            </tr>
-                        <?php endforeach; ?>
-                        <tr>
-                            <td colspan="3"> <a href="<?php echo base_url('' . $pegawai->nip); ?>" class="btn btn-default btn-xs btn-info" ><span class="glyphicon glyphicon-pencil"></span>Tambah Data</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                 
     </div>
 </div>

@@ -1,5 +1,5 @@
 <div class="page-header">
-    <h1>Edit Pegawai</h1>
+    <h1>Edit Staff</h1>
 </div>
 <div class="col-md-12">
     <?php
@@ -87,13 +87,7 @@
     </div>
     
     
-    <div class="form-group">
-        <label for="inputJabatan" class="col-lg-2 control-label">Jabatan</label>
-        <div class="col-lg-5">
-            <label class="sr-only" for="exampleInputJabatan">Jabatan</label>
-<?php echo form_dropdown('id_jab', $jabatan, $staff->id_jab, 'class="form-control"'); ?>
-        </div>
-    </div>
+    
     <div class="form-group">
         <label for="inputName1" class="col-lg-2 control-label">Foto</label>
         <div class="col-lg-2">

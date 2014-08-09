@@ -1,5 +1,7 @@
 <div class="alert alert-info">
   <i class="glyphicon glyphicon-time"></i>
+  
+  
   <strong>JADWAL PERKULIAHAN</strong> 
 </div>
            
