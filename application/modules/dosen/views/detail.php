@@ -41,7 +41,7 @@
                             </td>
                             <td>
                                   
-      <a href="<?php echo base_url('dosen/nilai_mhs/' .$jad->kd_jadwal ); ?>" class="btn btn-xs btn-info"><strong>+</strong>Nilai</a>                          
+      <a href="<?php echo base_url('dosen/nilai_mhs/' .$jad->kd_jadwal ); ?>" class="glyphicon glyphicon-edit"><strong>.Nilai.</strong></a>                          
                             </td>
                         </tr>
                     <?php 

@@ -29,7 +29,7 @@
                 <td><?php echo $mhs->uas; ?> </td>
                 <td><?php echo $mhs->grade; ?> </td>
                 <td>
-                  <a href="<?php echo base_url('dosen/input_nilai/' .$mhs->id ); ?>" class="btn btn-xs btn-success"><strong>+</strong>Nilai</a>    
+                  <a href="<?php echo base_url('dosen/input_nilai/' .$mhs->id ); ?>" class="glyphicon glyphicon-edit">Nilai</a>    
                 </td>
                 
              

@@ -3,6 +3,8 @@
 
 Class Jadwal extends MX_Controller {
 
+  
+
     public function __construct() {
         parent::__construct();
         $this->load->model('m_jadwal');
@@ -112,11 +114,14 @@ Class Jadwal extends MX_Controller {
     }
    public function getmahasiswa($id){
       
-   $data['jadwal'] = $this->m_jadwal->get($id);
+            $data['jadwal'] = $this->load->model('jadwal/m_jadwal')->get($id);
+            
+   
    $data['mahasiswa']=$this->load->model('nilai/m_nilai')->jdl_mhs($id);
    
      $data['content'] = 'mahasiswa';
      $this->load->view('layout/template', $data);
+   
      
     }
  
