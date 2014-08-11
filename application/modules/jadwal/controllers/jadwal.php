@@ -114,7 +114,7 @@ Class Jadwal extends MX_Controller {
     }
    public function getmahasiswa($id){
       
-            $data['jadwal'] = $this->load->model('jadwal/m_jadwal')->get($id);
+    $data['jadwal'] = $this->load->model('jadwal/m_jadwal')->get($id);
             
    
    $data['mahasiswa']=$this->load->model('nilai/m_nilai')->jdl_mhs($id);
@@ -190,6 +190,10 @@ Class Jadwal extends MX_Controller {
     public function jadwal_aktif($id){
         $this->m_jadwal->update_aktif($id);
         redirect('jadwal/selesai');
+    }
+    
+    public function cetak($id){
+        $data['mahasiswa']=$this->load->model('nilai/m_nilai')->jdl_mhs($id);
     }
  
 }

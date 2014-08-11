@@ -2,11 +2,7 @@
     <thead>
         <tr class=" alert-info">
     
-        <td> <strong> KD: <?php echo $jadwal->kd_jadwal; ?> </strong> </td>
-        <td><strong> KD M.K  : <?php echo $jadwal->id_matkul; ?> </strong> </td>
-        <td><strong> Dosen   : <?php echo $jadwal->nip_dosen; ?> </strong> </td>
-        <td><strong> Kelas   : <?php echo $jadwal->id_kelas; ?> </strong></td>
-   
+       
         </tr>
 </thead>
 </table>
