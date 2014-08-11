@@ -8,6 +8,7 @@ Class Jadwal extends MX_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('m_jadwal');
+       
         
     }
     public function index() {
@@ -193,7 +194,18 @@ Class Jadwal extends MX_Controller {
     }
     
     public function cetak($id){
-        $data['mahasiswa']=$this->load->model('nilai/m_nilai')->jdl_mhs($id);
+         $this->load->helper('to_excel');
+         
+         $text="SELECT * FROM nilai WHERE id_jadwal='$id'";
+         
+        $data=  $this->m_jadwal->manualQuery($text);
+       
+       
+			
+			
+			$nama_file = 'NILAI_Mahasiswa_JADWAL_' . $id;
+			
+            to_excel($data, $nama_file);
     }
  
 }

@@ -1,10 +1,6 @@
-<table class=" table table-hover table-responsive">
-    <thead>
-        <tr class=" alert-info">
-    
-       
-        </tr>
-</thead>
+<div class="alert-info">
+    <a href="<?php echo base_url('jadwal/cetak/'.$jadwal->kd_jadwal); ?>"class="btn btn-xs btn-success">Download Excell</a>
+</div>
 </table>
     <table class="table table-bordered" >
          <thead>

@@ -87,5 +87,10 @@ class M_jadwal extends MY_Model {
         $this->db->update('jadwal', $data);
 
     }
+    
+    function manualQuery($q)
+	{
+		return $this->db->query($q);
+	}
 }
 ?>
